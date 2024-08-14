@@ -126,7 +126,7 @@ def fetch_phone_number(company_name, location):
                    
         
         
-app = Flask(__name__, static_folder='../Web')
+app = Flask(__name__)
 CORS(app)
 @app.route('/data', methods=['GET', 'POST'])
 def data():

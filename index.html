@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <base target="_blank">
+    <title>Fetching data</title>
+  </head>
+  <body>
+    <div class="main">
+      <input
+        type="text"
+        placeholder="Job title, keywords or company"
+        id="position"
+      />
+      <input type="text" placeholder="Location" id="location"/>
+      <div class="pages-div">
+      <input
+        type="number"
+        placeholder="Page to start fetching from"
+        id="start"
+      />
+      <input
+        type="number"
+        placeholder="Number of pages to be fetched"
+        id="pages"
+      />
+    </div>
+    <div class="buttons">
+      <button id="fetch-data-button">Fetch data</button>
+      <button id="delete-data-button">Delete all data</button>
+    </div>
+    </div>
+    <div class="loader"></div>
+    <div class="error"></div>
+    <table id="output">
+      
+    </table>
+    <script src="app.js"></script>
+  </body>
+</html>

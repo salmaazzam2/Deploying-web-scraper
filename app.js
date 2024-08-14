@@ -17,7 +17,7 @@ async function fetchData() {
   const locationVal = locationEl.value.replace(" ", "+").replace(',', '%2C');
   const pagesVal = pagesEl.value;
   const starterPageVal = starterPageEl.value;
-  const url = `http://127.0.0.1:5000/data?position=${positionVal}&location=${locationVal}&pages=${pagesVal}&start=${starterPageVal}`;
+  const url = `https://7184e752-dd92-4f5e-abfc-82da0fa570f4.e1-eu-north-azure.choreoapps.dev/data?position=${positionVal}&location=${locationVal}&pages=${pagesVal}&start=${starterPageVal}`;
 
   try {
     const response = await fetch(url)

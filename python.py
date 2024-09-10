@@ -128,6 +128,12 @@ def fetch_phone_number(company_name, location):
         
 app = Flask(__name__)
 CORS(app)
+
+# Root route to avoid 404 errors at the base URL
+@app.route('/')
+def home():
+    return "Welcome to the Job Scraper API! Use /data endpoint to get job data."
+
 @app.route('/data', methods=['GET', 'POST'])
 def data():
     position = request.args.get('position')
@@ -142,8 +148,7 @@ def data():
             soup_at_index_i = fetch_indeed_page(page_index, location, position)
             jobs = extract(soup_at_index_i)
             all_jobs['jobs'].extend(jobs)  # Extend the list with new jobs
-        return all_jobs
-    
+        return jsonify(all_jobs)  # Ensure the response is JSON
 
 if __name__ == '__main__':
-    app.run(debug=False, port="0.0.0.0")
+    app.run(debug=False, host="0.0.0.0")
